@@ -6,19 +6,43 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "node scripts/toggleDevRoutes.js",
+    "postbuild": "node scripts/toggleDevRoutes.js"
   },
   "dependencies": {
+    "@editorjs/checklist": "^1.6.0",
+    "@editorjs/code": "^2.9.0",
+    "@editorjs/delimiter": "^1.4.0",
+    "@editorjs/editorjs": "^2.29.0",
+    "@editorjs/embed": "^2.7.0",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/image": "^2.9.0",
+    "@editorjs/inline-code": "^1.5.0",
+    "@editorjs/link": "^2.6.2",
+    "@editorjs/list": "^1.9.0",
+    "@editorjs/marker": "^1.4.0",
+    "@editorjs/paragraph": "^2.11.3",
+    "@editorjs/quote": "^2.6.0",
+    "@editorjs/raw": "^2.5.0",
+    "@editorjs/simple-image": "^1.6.0",
+    "@editorjs/table": "^2.3.0",
+    "@editorjs/warning": "^1.4.0",
+    "antd": "^5.14.2",
+    "autoprefixer": "^10.4.18",
+    "editorjs-html": "^3.4.3",
+    "editorjs-parser": "^1.5.3",
+    "framer-motion": "^11.0.8",
+    "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
   }
 }
