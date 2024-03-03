@@ -2,6 +2,10 @@ import { Card, Flex } from 'antd';
 import Link from 'next/link';
 import { getAllBlogs } from '../actions';
 
+export const metadata = {
+    title: 'Blogs',
+    description: 'Read all blogs here.',
+};
 
 
 export default async function Blogs() {

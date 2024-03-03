@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: Props) {
     const post = await getPageData(`${config.blogsStorageKey}/${params.slug}.json`);
     return {
         title: post.title,
+        description: post.description,
     }
 }
 

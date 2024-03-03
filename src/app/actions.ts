@@ -58,8 +58,9 @@ export async function getPageData(page: string) {
   const html = parser.parse(data);
 
   return {
-    title: "Undtitled",
+    title: data?.blocks[0]?.data?.text || "Undtitled",
     data: data,
+    description: data?.blocks[1]?.data?.text?.replace(/&nbsp;/g, "") || "",
     content: html,
   };
 }
