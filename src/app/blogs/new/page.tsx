@@ -4,6 +4,7 @@ import config from "@/config";
 
 
 async function saveNewBlog(fileDetails: any) {
+    'use server'
     saveBlogToFile({ absolutePath: config.blogsStorageKey, ...fileDetails })
 }
 

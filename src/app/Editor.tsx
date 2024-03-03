@@ -85,7 +85,7 @@ export default function Editor({
         {!readOnly && (
           <Button
             style={{ zIndex: 100 }}
-            color="primary"
+            type="primary"
             onClick={openSaveModal}
           >
             Save

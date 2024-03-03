@@ -1,37 +1,32 @@
-import fs from 'fs';
+import { Card, Flex } from 'antd';
 import Link from 'next/link';
-import path from 'path';
+import { getAllBlogs } from '../actions';
 
-async function getData() {
-    const files = fs.readdirSync(path.join(process.cwd(), 'src/data/blogs'));
-    const blogs = files.map(file => {
-        const slug = file.replace('.json', '');
-        const content = fs.readFileSync(path.join(process.cwd(), 'src/data/blogs', file), 'utf8');
-        const data = JSON.parse(content);
-        return {
-            slug,
-            ...data
-        }
-    });
 
-    return blogs;
-
-}
 
 export default async function Blogs() {
-    const data = await getData();
+    const data = await getAllBlogs();
     return (
-        <main>
+        <>
             <h1>Blogs</h1>
-            <Link href="/blogs/new">New Blog</Link>
-            <ul>
+            <p>
+                Read all blogs here.
+            </p>
+            <Flex vertical gap={16}>
                 {data.map(blog => (
-                    <li key={blog.slug}>
-                        <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
-                    </li>
-                ))}
-            </ul>
+                    <Card hoverable key={blog.slug}>
+                        <Link href={`/blogs/${blog.slug}`}>
+                            <Flex vertical>
+                                {blog.title}
+                                <p style={{ color: '#000', opacity: '.7' }}>{blog.description}</p>
+                            </Flex>
 
-        </main>
+                        </Link>
+
+                    </Card>
+                ))}
+            </Flex>
+
+        </>
     )
 }
