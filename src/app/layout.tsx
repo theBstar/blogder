@@ -1,4 +1,4 @@
-import StyledComponentsRegistry from "@/theme/AntdRegistry";
+import StyledComponentsRegistry from "@/app/AntdRegistry";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import Header from "./Header";

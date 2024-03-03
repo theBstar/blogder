@@ -1,8 +1,8 @@
-import config from "@/config";
 import { OutputData } from "@editorjs/editorjs";
 import edjsParser from "editorjs-parser";
 import fs from "fs";
 import path from "path";
+import config from "../../config";
 
 export async function saveBlogToFile({
   filename,
@@ -22,14 +22,6 @@ export async function saveBlogToFile({
   } catch (e) {}
 }
 
-// export async function getAllBlogs() {
-//   const blogDir = path.join(process.cwd(), config.blogsStorageKey);
-//   const filenames = fs.readdirSync(blogDir);
-//   return filenames.map((slug) => ({
-//     slug: slug.replace(".json", ""),
-//   }));
-// }
-
 export async function getAllBlogs() {
   const files = fs.readdirSync(
     path.join(process.cwd(), config.blogsStorageKey)
@@ -44,7 +36,7 @@ export async function getAllBlogs() {
     return {
       slug,
       title: data?.blocks[0]?.data?.text,
-      description: data?.blocks[1]?.data?.text?.replace(/&nbsp;/g, ""),
+      description: data?.blocks[1]?.data?.text?.replace(/&nbsp;/g, "") || "",
     };
   });
 

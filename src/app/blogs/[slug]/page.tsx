@@ -1,5 +1,5 @@
 import { getAllBlogs, getPageData } from "@/app/actions";
-import config from "@/config";
+import config from "../../../../config";
 
 export async function generateStaticParams() {
     return getAllBlogs();

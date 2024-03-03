@@ -1,6 +1,6 @@
 import Editor from "@/app/Editor";
 import { saveBlogToFile } from "@/app/actions";
-import config from "@/config";
+import config from "../../../../config";
 
 
 async function saveNewBlog(fileDetails: any) {
