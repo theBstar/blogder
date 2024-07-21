@@ -1,5 +1,6 @@
 import StyledComponentsRegistry from "@/app/AntdRegistry";
 import DevelopmentHeader from "@/components/DevelopmentHeader";
+import config from "@/config";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
@@ -7,8 +8,8 @@ import "./globals.css";
 const inter = Lato({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Wonderful blog posts about all things web development.",
+  title: config.blogMeta.title,
+  description: config.blogMeta.description,
 };
 
 export default function RootLayout({
