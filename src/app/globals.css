@@ -3,3 +3,72 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.cdx-block {
+  margin-bottom: 20px;
+}
+
+.ce-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ce-paragraph {
+  line-height: 1.6;
+}
+
+.image-block img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-block figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+.list-block {
+  padding-left: 20px;
+}
+
+.quote-block {
+  border-left: 4px solid #ccc;
+  padding-left: 15px;
+  font-style: italic;
+}
+
+.code-block {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.table-block {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-block td,
+.table-block th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.delimiter-block {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 20px 0;
+}
+
+.warning-block {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.warning-block h3 {
+  color: #856404;
+  margin-top: 0;
+}

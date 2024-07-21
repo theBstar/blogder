@@ -1,7 +1,7 @@
-import edjsParser from "editorjs-parser";
 import fs from "fs";
 import path from "path";
 import config from "../config";
+import { getBlogContentHTMLFromSavedData } from "./parser";
 import { Blog, SavedBlogData } from "./types";
 
 export async function saveBlog({
@@ -24,12 +24,6 @@ export async function saveBlog({
     fs.writeFileSync(blogPath, JSON.stringify(savedBlogData, null, 2));
     return blogPath;
   } catch (e) {}
-}
-
-function getBlogContentHTMLFromSavedData(savedData: any) {
-  const parser = new edjsParser();
-  const html = parser.parse(savedData);
-  return html;
 }
 
 export async function getAllBlogs(): Promise<Blog[]> {
