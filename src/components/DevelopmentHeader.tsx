@@ -1,9 +1,10 @@
 'use client';
 
+import config from "@/config";
 import { Button, Flex } from "antd";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function Header() {
+function Header() {
     const pathname = usePathname();
     const router = useRouter();
     return (
@@ -20,9 +21,14 @@ export default function Header() {
                 </Button>
                 <Button onClick={() => router.push('/blogs')}>Blogs</Button>
             </Flex>
-            {pathname.endsWith('new') || pathname.endsWith('edit') ? null : (
-                <Button onClick={() => router.push('/blogs/new')}>New blog</Button>
+            {pathname.includes('create') || pathname.includes('edit') ? null : (
+                <Button onClick={() => router.push('/create-blog')}>New blog</Button>
             )}
         </Flex>
     )
+}
+
+export default function DevelopmentHeader() {
+    if (config.isProduction) return null;
+    return <Header />
 }

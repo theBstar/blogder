@@ -1,6 +1,6 @@
 import { Card, Flex } from 'antd';
 import Link from 'next/link';
-import { getAllBlogs } from '../actions';
+import { getAllBlogs } from '../../utils/actions';
 
 export const metadata = {
     title: 'Blogs',
@@ -20,8 +20,8 @@ export default async function Blogs() {
             </Flex>
             <Flex vertical gap={16}>
                 {data.map(blog => (
-                    <Card hoverable key={blog.slug}>
-                        <Link href={`/blogs/${blog.slug}`}>
+                    <Card hoverable key={blog.id}>
+                        <Link href={`/blogs/${blog.id}`}>
                             <Flex vertical>
                                 {blog.title}
                                 <p style={{ color: '#000', opacity: '.7' }}>{blog.description}</p>

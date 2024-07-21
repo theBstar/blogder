@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prebuild": "node scripts/toggleDevRoutes.js",
-    "postbuild": "node scripts/toggleDevRoutes.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@editorjs/checklist": "^1.6.0",

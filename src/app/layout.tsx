@@ -1,7 +1,7 @@
 import StyledComponentsRegistry from "@/app/AntdRegistry";
+import DevelopmentHeader from "@/components/DevelopmentHeader";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
-import Header from "./Header";
 import "./globals.css";
 
 const inter = Lato({ weight: '400', subsets: ['latin'] });
@@ -22,9 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          {process.env.NODE_ENV === 'development' && (
-            <Header />
-          )}
+          <DevelopmentHeader />
           <main style={{ width: '80%', margin: '0px auto' }}>
             {children}
           </main>
