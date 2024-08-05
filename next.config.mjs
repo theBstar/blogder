@@ -5,9 +5,6 @@ const nextConfig = {
   api: {
     bodyParser: false,
   },
-  experimental: {
-    serverActions: true,
-  },
 };
 
 export default nextConfig;
