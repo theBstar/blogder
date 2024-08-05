@@ -1,0 +1,37 @@
+{
+  "status": "draft",
+  "data": {
+    "time": 1722875894173,
+    "blocks": [
+      {
+        "id": "g4n-DDSgbb",
+        "type": "header",
+        "data": {
+          "text": "Image upload test",
+          "level": 2
+        }
+      },
+      {
+        "id": "bdx-I7cb8-",
+        "type": "image",
+        "data": {
+          "caption": "Parrot",
+          "withBorder": false,
+          "withBackground": false,
+          "stretched": false,
+          "file": {
+            "url": "/uploads/1.svg"
+          }
+        }
+      },
+      {
+        "id": "RK3Ti4RF72",
+        "type": "paragraph",
+        "data": {
+          "text": "Working!"
+        }
+      }
+    ],
+    "version": "2.29.0"
+  }
+}

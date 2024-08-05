@@ -17,6 +17,10 @@ body {
   line-height: 1.6;
 }
 
+figure.image-block {
+  text-align: center;
+}
+
 .image-block img {
   max-width: 100%;
   height: auto;
