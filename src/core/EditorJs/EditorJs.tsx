@@ -1,8 +1,11 @@
+'use client';
+
 import Code from "@editorjs/code";
 import Delimiter from "@editorjs/delimiter";
-import EditorJS, { EditorConfig } from "@editorjs/editorjs";
+import EditorJS, { EditorConfig, ToolConstructable, ToolSettings } from "@editorjs/editorjs";
 import Embed from "@editorjs/embed";
 import Header from "@editorjs/header";
+import ImageTool from "@editorjs/image";
 import InlineCode from "@editorjs/inline-code";
 import LinkTool from "@editorjs/link";
 import List from "@editorjs/list";
@@ -14,7 +17,11 @@ import Table from "@editorjs/table";
 import Warning from "@editorjs/warning";
 import { useEffect, useRef } from "react";
 
-export const EDITOR_JS_TOOLS = {
+type EditorTools = {
+    [toolName: string]: ToolConstructable | ToolSettings;
+};
+
+export const EDITOR_JS_TOOLS: EditorTools = {
     // NOTE: Paragraph is default tool. Declare only when you want to change paragraph option.
     // paragraph: Paragraph,
     embed: Embed,
@@ -30,6 +37,16 @@ export const EDITOR_JS_TOOLS = {
     delimiter: Delimiter,
     inlineCode: InlineCode,
     simpleImage: SimpleImage,
+    image: {
+        class: ImageTool,
+        config: {
+            endpoints: {
+                byFile: '/api/upload',
+            },
+            field: 'file', // Make sure this matches the field name in the API route
+            types: 'image/*'
+        },
+    } as unknown as EditorTools[string],
 };
 
 

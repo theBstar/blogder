@@ -14,7 +14,7 @@ export default async function RecentBlogs() {
                     Read all
                 </Link>
             </Flex>
-            <Row gutter={12}>
+            <Row gutter={[16, 16]}>
                 {recentBlogs.map(blog => (
                     <Col key={blog.title} md={{ span: 12 }} lg={{ span: 8 }} sm={{ span: 24 }}>
                         <Link href={`/blogs/${blog.id}`}>
