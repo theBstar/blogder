@@ -30,8 +30,8 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
-      
-      - name: Append output: 'export' to next.config.js
+
+      - name: Append output export to next.config.js
         run: |
           echo "module.exports = {
             ...require('./next.config.js'),
