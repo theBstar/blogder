@@ -26,6 +26,12 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
+      - name: Remove /api routes for production
+        run: |
+          if [ -d "./src/app/api" ]; then
+            rm -rf ./src/app/api
+          fi
+
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
         with:
