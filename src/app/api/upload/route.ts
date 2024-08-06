@@ -1,8 +1,8 @@
+"use server";
+
 import { writeFile } from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
-
-export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
   if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
