@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_ENVIRONMENT: production
+      - NEXT_PUBLIC_ENVIRONMENT: production
 
     steps:
       - name: Checkout 🛎️
@@ -33,6 +33,12 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
+
+      - name: List files in current directory 📄
+        run: ls -la
+
+      - name: List files in out directory 📂
+        run: ls -la ./out
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
