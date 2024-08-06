@@ -30,9 +30,16 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
+      
+      - name: Append output: 'export' to next.config.js
+        run: |
+          echo "module.exports = {
+            ...require('./next.config.js'),
+            output: 'export'
+          };" > next.config.js
 
       - name: Build with Next.js 🏗️
-        run: npx next build && npx next export
+        run: npx next build
 
       - name: List files in current directory 📄
         run: ls -la
