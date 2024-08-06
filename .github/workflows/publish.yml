@@ -26,6 +26,9 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
+      - name: List files in current directory 📄
+        run: ls -la
+
       - name: Remove /api routes for production
         run: |
           if [ -d "./src/app/api" ]; then
