@@ -32,7 +32,7 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npx next build && next export
+        run: npx next build && npx next export
 
       - name: List files in current directory 📄
         run: ls -la
