@@ -9,7 +9,8 @@ type Config = {
   };
 };
 
-const isProduction = window?.location?.hostname === "localhost" ? false : true;
+const isProduction =
+  typeof window !== "undefined" && window.location.hostname !== "localhost";
 
 const config: Config = {
   homeStorageKey: "/data",
