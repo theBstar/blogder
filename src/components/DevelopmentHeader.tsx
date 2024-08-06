@@ -12,7 +12,7 @@ function Header() {
             <Flex gap={8}>
                 <Button onClick={() => {
                     if (pathname === '/') {
-                        router.push('/dev/edit');
+                        router.push('/dev/edit-blog');
                         return;
                     }
                     router.push('/');

@@ -9,7 +9,7 @@ type Config = {
   };
 };
 
-const isProduction = process.env.NODE_ENV !== "development";
+const isProduction = window?.location?.hostname === "localhost" ? false : true;
 
 const config: Config = {
   homeStorageKey: "/data",
