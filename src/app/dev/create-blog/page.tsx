@@ -1,6 +1,6 @@
 import Editor from "@/components/Editor";
 import { saveBlog } from "@/utils/actions";
-import config from "../../config";
+import config from "../../../config";
 
 
 async function createNewBlog(fileDetails: any) {

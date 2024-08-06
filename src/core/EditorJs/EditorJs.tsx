@@ -41,7 +41,7 @@ export const EDITOR_JS_TOOLS: EditorTools = {
         class: ImageTool,
         config: {
             endpoints: {
-                byFile: '/api/upload',
+                byFile: '/dev/api',
             },
             field: 'file', // Make sure this matches the field name in the API route
             types: 'image/*'

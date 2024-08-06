@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  output:
-    process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "export" : undefined,
+  output: process.env.NODE_ENV !== "development" ? "export" : undefined,
   api: {
     bodyParser: false,
   },

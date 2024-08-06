@@ -1,6 +1,6 @@
 import Editor from "@/components/Editor";
 import { getBlogDataById, saveBlog } from "@/utils/actions";
-import config from "../../config";
+import config from "../../../config";
 
 
 async function saveBlogChanges(fileDetails: any) {

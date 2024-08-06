@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_ENVIRONMENT: production
+      NODE_ENV: production
 
     steps:
       - name: Checkout 🛎️
@@ -29,10 +29,10 @@ jobs:
       - name: List files in current directory 📄
         run: ls -la
 
-      - name: Remove /api routes for production
+      - name: Remove /dev routes for production
         run: |
-          if [ -d "./src/app/api" ]; then
-            rm -rf ./src/app/api
+          if [ -d "./src/app/dev" ]; then
+            rm -rf ./src/app/dev
           fi
 
       - name: Setup Pages ⚙️

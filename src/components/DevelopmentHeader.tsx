@@ -12,7 +12,7 @@ function Header() {
             <Flex gap={8}>
                 <Button onClick={() => {
                     if (pathname === '/') {
-                        router.push('/edit');
+                        router.push('/dev/edit');
                         return;
                     }
                     router.push('/');
@@ -22,7 +22,7 @@ function Header() {
                 <Button onClick={() => router.push('/blogs')}>Blogs</Button>
             </Flex>
             {pathname.includes('create') || pathname.includes('edit') ? null : (
-                <Button onClick={() => router.push('/create-blog')}>New blog</Button>
+                <Button onClick={() => router.push('/dev/create-blog')}>New blog</Button>
             )}
         </Flex>
     )

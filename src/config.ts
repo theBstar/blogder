@@ -9,11 +9,13 @@ type Config = {
   };
 };
 
+const isProduction = process.env.NODE_ENV !== "development";
+
 const config: Config = {
   homeStorageKey: "/data",
   blogsStorageKey: "data/blogs",
   heroPicture: "/profile.jpg",
-  isProduction: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",
+  isProduction,
 
   blogMeta: {
     title: "My Blog",
