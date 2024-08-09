@@ -1,7 +1,7 @@
-import RecentBlogs from '@/components/RecentBlogs';
-import config from '@/config';
-import { getBlogDataById } from "@/utils/actions";
 import { Flex, Image } from "antd";
+import RecentBlogs from '../components/RecentBlogs';
+import config from '../config';
+import { getBlogDataById } from "../utils/actions";
 
 export default async function Home() {
   const post = await getBlogDataById(`${config.homeStorageKey}/home`);

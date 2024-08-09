@@ -1,8 +1,8 @@
 "use client";
 
-import useEditorJs from "@/core/EditorJs/EditorJs";
 import { Button, Input, Modal } from "antd";
 import { useCallback, useEffect, useState } from "react";
+import useEditorJs from "../core/EditorJs/EditorJs";
 
 type Props = {
   save?: (fileDetails: any) => void;

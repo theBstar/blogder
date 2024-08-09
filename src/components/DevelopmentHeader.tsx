@@ -1,8 +1,8 @@
 'use client';
 
-import config from "@/config";
 import { Button, Flex } from "antd";
 import { usePathname, useRouter } from "next/navigation";
+import config from "../config";
 
 function Header() {
     const pathname = usePathname();

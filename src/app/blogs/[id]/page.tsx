@@ -1,5 +1,5 @@
-import config from "@/config";
-import { getAllBlogs, getBlogDataById } from "@/utils/actions";
+import config from "../../../config";
+import { getAllBlogs, getBlogDataById } from "../../../utils/actions";
 
 export async function generateStaticParams() {
     return getAllBlogs();

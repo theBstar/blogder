@@ -1,8 +1,8 @@
-import StyledComponentsRegistry from "@/app/AntdRegistry";
-import DevelopmentHeader from "@/components/DevelopmentHeader";
-import config from "@/config";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import StyledComponentsRegistry from "../app/AntdRegistry";
+import DevelopmentHeader from "../components/DevelopmentHeader";
+import config from "../config";
 import "./globals.css";
 
 const inter = Lato({ weight: '400', subsets: ['latin'] });

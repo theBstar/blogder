@@ -1,6 +1,6 @@
-import { getAllBlogs } from "@/utils/actions";
 import { Card, Col, Flex, Row } from "antd";
 import Link from "next/link";
+import { getAllBlogs } from "../utils/actions";
 
 
 export default async function RecentBlogs() {
