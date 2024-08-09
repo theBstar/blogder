@@ -26,22 +26,10 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
-      - name: List files in current directory 📄
-        run: ls -la
-
-      - name: Remove /dev routes for production
-        run: |
-          if [ -d "./src/app/dev" ]; then
-            rm -rf ./src/app/dev
-          fi
-
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
-
-      - name: Test if src exists 📄
-        run: ls -la
 
       - name: Append output export to next.config.js
         run: |
