@@ -40,6 +40,9 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Test if src exists 📄
+        run: ls -la
+
       - name: Append output export to next.config.js
         run: |
           echo "module.exports = {
