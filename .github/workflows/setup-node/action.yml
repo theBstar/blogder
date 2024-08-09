@@ -8,6 +8,9 @@ runs:
       with:
         node-version: 20
 
+    - name: Clear Cache
+      run: npm cache clean --force
+
     - name: Cache dependencies ⚡
       id: cache_dependencies
       uses: actions/cache@v3
