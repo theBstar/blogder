@@ -9,6 +9,7 @@ runs:
         node-version: 20
 
     - name: Clear Cache
+      shell: bash
       run: npm cache clean --force
 
     - name: Cache dependencies ⚡
