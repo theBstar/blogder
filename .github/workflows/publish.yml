@@ -16,8 +16,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
 
     steps:
       - name: Checkout 🛎️
@@ -25,15 +23,6 @@ jobs:
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
-
-      - name: List files in current directory 📄
-        run: ls -la
-
-      - name: Remove /dev routes for production
-        run: |
-          if [ -d "./src/app/dev" ]; then
-            rm -rf ./src/app/dev
-          fi
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
@@ -49,12 +38,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
-
-      - name: List files in current directory 📄
-        run: ls -la
-
-      - name: List files in out directory 📂
-        run: ls -la ./out
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
