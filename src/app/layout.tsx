@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import StyledComponentsRegistry from "../app/AntdRegistry";
-import DevelopmentHeader from "../components/DevelopmentHeader";
 import config from "../config";
 import "./globals.css";
 
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <DevelopmentHeader />
           <main style={{ width: '80%', margin: '0px auto' }}>
             {children}
           </main>

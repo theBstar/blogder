@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - feature/static
 
 permissions:
   contents: read
@@ -16,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
 
     steps:
       - name: Checkout 🛎️
@@ -40,12 +39,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npm run build
-
-      - name: List files in current directory 📄
-        run: ls -la
-
-      - name: List files in out directory 📂
-        run: ls -la ./out
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3

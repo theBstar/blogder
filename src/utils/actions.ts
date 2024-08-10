@@ -4,28 +4,6 @@ import config from "../config";
 import { getBlogContentHTMLFromSavedData } from "./parser";
 import { Blog, SavedBlogData } from "./types";
 
-export async function saveBlog({
-  filename,
-  editorJsData,
-  absolutePath,
-}: {
-  filename: string;
-  editorJsData: any;
-  absolutePath: string;
-}) {
-  try {
-    const fs = require("fs");
-    const path = require("path");
-    const blogPath = path.join(process.cwd(), absolutePath, filename + ".json");
-    const savedBlogData = {
-      status: "draft",
-      data: editorJsData,
-    };
-    fs.writeFileSync(blogPath, JSON.stringify(savedBlogData, null, 2));
-    return blogPath;
-  } catch (e) {}
-}
-
 export async function getAllBlogs(): Promise<Blog[]> {
   const files = fs.readdirSync(
     path.join(process.cwd(), config.blogsStorageKey)
