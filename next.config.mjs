@@ -6,7 +6,6 @@ const nextConfig = {
     bodyParser: false,
   },
   images: { unoptimized: true },
-  basePath: "https://www.thebstar.com/blogder/",
 };
 
 export default nextConfig;
